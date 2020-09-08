@@ -18,9 +18,21 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font: source sans pro, sans-serif;
+  /* font: source sans pro, sans-serif; */
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .container {
+   width: 90%;
+   color: #545149;
+   background-color: #f4f1ec;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-family: source-sans-pro, sans-serif;
+   padding: 0 1.5em;
+ }
