@@ -3,10 +3,16 @@ header {
   width: 100%;
   background-color: #cc8800;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+.avatar {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  font-family: source-sans-pro, sans-serif;
-  color: white;
+  /* height: 00px; */
+}
+
+.name {
+  color: #545149;
+  display: flex;
+  justify-content: center;
 }

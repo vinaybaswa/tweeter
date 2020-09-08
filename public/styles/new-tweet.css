@@ -1,0 +1,68 @@
+span {
+  font-size: 50px;
+}
+
+.name {
+  font-size: 30px;
+  color: white;
+}
+
+main {
+  margin: 0 auto;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+body {
+  padding-top: 120px;
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee', 'sans-serif';
+  margin-top: 20px;
+}
+
+.submit {
+  /* display:none; */
+  font-family: 'Bungee', 'sans-serif';
+  color: white;
+  background-color: #06E1BB;
+  margin-top: 20px;
+}
+
+label {
+  resize: none;
+}
+
+.new-tweet {
+  color: #545149;
+  font-size: 20px;
+}
+
+.question {
+  font-size: 30px;
+  font-family: 'Source Sans Pro', 'sans-serif';
+}
+
+#tweet-text {
+  /* display:none; */
+  width: 100%;
+  background-color: transparent;
+  color: black;
+  outline: 0;
+  border-color: black;
+  border: none;
+  border-bottom: 2px solid gray;
+  resize: none;
+  font-size: 30px;
+  font-weight: regular;
+  margin-left: 5px;
+  margin-right: 10px;
+  font-family: 'Source Sans Pro', 'sans-serif';
+  /* text-align: left; */
+}
