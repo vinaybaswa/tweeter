@@ -14,15 +14,11 @@ html {
  * Global layout stuff
  */
 
- nav {
-  font: bungee, sans-serif;
-}
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font: source-sans-pro, sans-serif;
+  font: source sans pro, sans-serif;
 }
 
 /*
