@@ -67,6 +67,10 @@ label {
   /* text-align: left; */
 }
 
+.flex-container {
+  width: 100%;
+}
+
 article {
   /* border: 5px solid gray; */
   margin: 100px;
@@ -141,4 +145,15 @@ article {
 .tweet:hover {
   box-shadow: 5px 5px gray;
   text-shadow: 2px 2px gray;
+}
+
+.handle {
+  font-size: 30px;
+  color: #f4f1ec;
+  margin-right: 20px;
+}
+
+.small-icons i {
+  margin-left: 10px;
+  color: #4056a1;
 }
