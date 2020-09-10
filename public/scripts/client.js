@@ -1,4 +1,4 @@
-const data = [{
+const tweetsData = [{
     "user": {
       "name": "Newton",
       "avatars": "https://i.imgur.com/73hZDYK.png",
@@ -22,6 +22,7 @@ const data = [{
   }
 ]
 
+//converts data in to HTML element
 const createTweetElement = function(tweet) {
   const $tweet = $(`<div class = "tweet">
   <div class="tweet-header">
@@ -42,14 +43,31 @@ const createTweetElement = function(tweet) {
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $(document).ready(function() {
-      $(".tweets-container").append($tweet);
-    });
+    $(".tweets-container").append($tweet);
   }
 }
 
-renderTweets(data);
+$(document).ready(function() {
+  console.log("DOM ready to fire")
+  renderTweets(tweetsData);
 
-$.get("/tweets")
-  .then(responnse => renderTweets(responnse))
-  .catch(e => $(".tweets-container").append(`<h1>SOMETHING'S WRONG</h1>`))
+  $("form").submit(function(event) {
+    event.preventDefault();
+
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize() //turns form data into query string
+    }).then(function() {
+      //renderTweets()
+      $('#tweet-text').val();
+      console.log($('#tweet-text').val());
+    })
+
+    // $.get("/tweets")
+    //   .then(response => renderTweets(response))
+    //   .catch(e => $(".tweets-container").append(`<h1>SOMETHING'S WRONG</h1>`))
+  })
+
+
+});
