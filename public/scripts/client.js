@@ -39,13 +39,6 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
-//Creates element for each tweet
-const renderTweets = function(tweets) {
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-    $(".tweets-container").append($tweet);
-  }
-}
 
 $(document).ready(function() {
   console.log("DOM ready to fire")
@@ -59,19 +52,27 @@ $(document).ready(function() {
       url: "/tweets",
       data: $(this).serialize() //turns form data into query string
     }).then(function() {
-      //loadtweets()
+      //loadTweets()
       $('#tweet-text').val();
       //console.log($('#tweet-text').val());
     })
 
   })
 
-  const loadtweets = () => {
+  //Creates element for each tweet
+  const renderTweets = function(tweets) {
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $(".tweets-container").append($tweet);
+    }
+  }
+
+  const loadTweets = () => {
     $.get("/tweets")
       .then(response => renderTweets(response))
       .catch(e => $(".tweets-container").append(`<h1>SOMETHING'S WRONG</h1>`))
   }
 
-  loadtweets()
+  loadTweets();
 
 });

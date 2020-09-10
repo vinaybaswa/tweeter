@@ -1,19 +1,29 @@
 $(document).ready(function() {
-  console.log("DOM ready")
-});
+  console.log("DOM ready from char-counter")
 
-$('#tweet-text').keyup(function() {
-  let tweet = $(this).val();
-  console.log(tweet);
-  let limit = $('.counter');
-  limit.val(140 - tweet.length);
-  console.log(limit.val())
+  $('#tweet-text').keyup(function() {
+    const tweet = $(this).val();
+    console.log(tweet);
+    const limit = $('.counter');
+    limit.val(140 - tweet.length);
+    console.log(limit.val())
 
-  if (tweet.length > 140) {
-    limit.css('color', 'red');
-    //renderError('tweet too long - please limit to 140 characters');
-    //console.log(('#submit-btn')[0]);
-  }
+    if (tweet.length > 140) {
+      limit.css('color', 'red');
+      alert("tweet too long, please respect 140 characters rule!!")
+    }
+  });
+
+  $('#submit-btn').click(function() {
+    $('.counter').val(140);
+    if ($('#tweet-text').val() === "") {
+      alert("Blanks tweets are n good!!");
+
+    } else if ($('#tweet-text').val().length > 140) {
+      ralert("tweet too long, please respect 140 characters rule!!")
+
+    }
+  })
 
 
 });
