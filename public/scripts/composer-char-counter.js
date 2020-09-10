@@ -17,7 +17,7 @@ $(document).ready(function() {
   $('#submit-btn').click(function() {
     $('.counter').val(140);
     if ($('#tweet-text').val() === "") {
-      alert("Blanks tweets are n good!!");
+      alert("Blanks tweets are no good!!");
 
     } else if ($('#tweet-text').val().length > 140) {
       ralert("tweet too long, please respect 140 characters rule!!")
