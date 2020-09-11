@@ -1,9 +1,3 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-
 html {
   box-sizing: border-box;
 }
@@ -16,7 +10,7 @@ html {
 
 
 /*
- * Global layout stuff
+ Global layout stuff
  */
 
 body {
@@ -28,12 +22,7 @@ body {
   padding-top: 120px;
 }
 
-
-/*
-*/
-
-* Additional CSS can be defined below or in other CSS files,
-as per instructions main {
+main {
   width: 90%;
   color: black;
   margin: 0 auto;
@@ -41,7 +30,7 @@ as per instructions main {
 }
 
 
-/* Desktop styles */
+/* Desktop reactive */
 
 @media only screen and (min-width: 1024px) {
   .flex-container {
