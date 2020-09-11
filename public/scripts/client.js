@@ -1,38 +1,8 @@
-// const tweetsData = [{
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png",
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-
-
-
 $(document).ready(function() {
-  console.log("DOM ready to fire")
-    //loadTweets();
-    //renderTweets(tweetsData);
 
   //converts data in to HTML element
   const createTweetElement = function(tweet) {
     const text = $("<div>").text(tweet.content.text).html();
-
     const $tweet = $(`<div class = "tweet">
     <div class="tweet-header">
     <img src="${tweet.user.avatars}" class="tweeter-icon"> 
@@ -46,8 +16,14 @@ $(document).ready(function() {
     </div>
     </div>`);
     return $tweet;
-  }
+  };
 
+  //To toggle tweet input form
+  $('.angled-arrow').click(function() {
+    $(".btn-and-input").slideToggle("slow");
+  });
+
+  //Sends form data to server
   $("form").submit(function(event) {
     event.preventDefault();
     $.ajax({
@@ -55,12 +31,11 @@ $(document).ready(function() {
       url: "/tweets",
       data: $(this).serialize() //turns form data into query string
     }).then(function() {
-      loadTweets()
+      loadTweets();
       $('#tweet-text').val("");
-      //console.log($('#tweet-text').val());
-    })
+    });
 
-  })
+  });
 
   //Creates element for each tweet
   const renderTweets = function(tweets) {
@@ -69,13 +44,14 @@ $(document).ready(function() {
       const $tweet = createTweetElement(tweet);
       $(".tweets-container").prepend($tweet);
     }
-  }
+  };
 
+  //Fetches tweets from /tweets
   const loadTweets = () => {
     $.get("/tweets")
       .then(response => renderTweets(response))
-      .catch(e => $(".tweets-container").prepend(`<h1>SOMETHING'S WRONG</h1>`))
-  }
+      .catch(e => $(".tweets-container").prepend(`<h1>SOMETHING'S WRONG</h1>`));
+  };
 
   loadTweets();
 

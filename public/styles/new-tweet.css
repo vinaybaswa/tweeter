@@ -5,17 +5,11 @@
 }
 
 .submit {
-  /* display:none; */
   font-family: 'Bungee', 'sans-serif';
   color: white;
   background-color: #06E1BB;
   margin-top: 20px;
 }
-
-
-/* label {
-  resize: none;
-} */
 
 .new-tweet {
   color: #545149;
@@ -28,7 +22,6 @@
 }
 
 #tweet-text {
-  /* display:none; */
   width: 100%;
   background-color: transparent;
   color: black;
@@ -42,7 +35,6 @@
   margin-left: 5px;
   margin-right: 10px;
   font-family: 'Source Sans Pro', 'sans-serif';
-  /* text-align: left; */
 }
 
 .flex-container {
@@ -57,12 +49,6 @@ article {
   color: black;
   font-style: normal;
 }
-
-
-/* .btn-and-input {
-  display: none;
-  width: 80%;
-} */
 
 .tweet-header {
   display: flex;
@@ -137,13 +123,13 @@ article {
 }
 
 #error {
-  transition: all .5s ease-in-out;
-  background: crimson !important;
+  margin-top: 10px;
   color: white;
+  position: relative;
   padding: 10px !important;
   border-radius: 0 !important;
-  position: relative;
+  background: red !important;
+  transition: all .5s ease-in-out;
   display: inline-block !important;
   box-shadow: 1px 1px 1px #aaaaaa;
-  margin-top: 10px;
 }

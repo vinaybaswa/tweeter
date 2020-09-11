@@ -1,25 +1,21 @@
 $(document).ready(function() {
-  console.log("DOM ready from char-counter")
-
   const renderError = function(message) {
     $('#error').remove();
-    //create the new element 
-    let error = $(`<div id="error"> ${message} </div>`);
-    //append to new tweet 
+    const error = $(`<div id="error"> ${message} </div>`);
     $('.new-tweet').prepend(error);
     $('#error').slideDown("slow"); //animations;
-  }
+  };
 
   $('#tweet-text').keyup(function() {
     const tweet = $(this).val();
     console.log(tweet);
     const limit = $('.counter');
     limit.val(140 - tweet.length);
-    console.log(limit.val())
+    console.log(limit.val());
 
     if (tweet.length > 140) {
       limit.css('color', 'red');
-      renderError("Message exceeded character length of 140 characters.");
+      renderError("Tweet too long, please respect 140 characters rule!!");
       //console.log($('#submit-btn')[0]);
       $('#submit-btn').prop('disabled', true); //disable it
     } else {
@@ -32,12 +28,9 @@ $(document).ready(function() {
   $('#submit-btn').click(function() {
     $('.counter').val(140);
     if ($('#tweet-text').val() === "") {
-      renderError("Blanks tweets are no good!!");
-
+      renderError("Blank tweets are no good!!");
     } else if ($('#tweet-text').val().length > 140) {
-      renderError("tweet too long, please respect 140 characters rule!!")
+      renderError("Tweet too long, please respect 140 characters rule!!");
     }
-  })
-
-
+  });
 });
