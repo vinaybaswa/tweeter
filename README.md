@@ -6,8 +6,9 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Screenshots
 
-!["screenshot of Home Page"] (https://github.com/vinaybaswa/tweeter/blob/master/docs/Reactive.png)
-!["screenshot of Desktop Home Page"] (https://github.com/vinaybaswa/tweeter/blob/master/docs/Desktop-Home.png)
+!["Screenshot of Home Page"](https://github.com/vinaybaswa/tweeter/blob/master/docs/Reactive.png)
+
+!["Screenshot of Desktop Home Page"](https://github.com/vinaybaswa/tweeter/blob/master/docs/Desktop-Home.png)
 
 ## Getting Started
 
